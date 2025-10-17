@@ -16,12 +16,12 @@ public class WordCounterSerial {
         Map<String, Integer> wordCounts = new HashMap<>();
 
         try (Stream<String> lines = Files.lines(filePath)) {
-            lines.forEach(line -> {
-                String[] words = line.toLowerCase().split("[^a-zA-Z]+");
+            lines.forEach(line -> { // Percorre linha a linha do arquivo
+                String[] words = line.toLowerCase().split("[^a-zA-Z]+"); // Divide a linha em palavras, ignorando pontuações e números
 
                 for (String word : words) {
                     if (!word.isEmpty()) {
-                        wordCounts.put(word, wordCounts.getOrDefault(word, 0) + 1);
+                        wordCounts.put(word, wordCounts.getOrDefault(word, 0) + 1); // Atualiza a contagem da palavra no mapa
                     }
                 }
             });

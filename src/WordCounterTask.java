@@ -3,7 +3,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.Callable;
 
-public class WordCounterTask implements Callable<Map<String, Integer>> {
+public class WordCounterTask implements Callable<Map<String, Integer>> { // Tarefa que conta palavras em uma lista de linhas
     private final List<String> lines;
 
     public WordCounterTask(List<String> lines) {
